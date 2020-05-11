@@ -25,10 +25,18 @@ You can create your custom commands and combine multiple commands into one.
 
 for eg. add any or all of the following commands to end of your `~/.bashrc` file.
 
-- `alias mkcd="mkdir $1 && cd $1"` This will combine creating and moving into a directory into one command.
-- Now if you always work in the same directory u could make an alias, say dev, to go to the directory from any location `alias dev="cd /path/to/dev"`
+- If you always work in the same directory u could make an alias, say dev, to go to the directory from any location `alias dev="cd /path/to/dev"`
 
-Once your modify any of these files you have to either reopen a new terminal or source that file for eg. `source ~/.bashrc`
+- You can also write complex functions, for eg. below function combines creating and moving into a directory into one command. After adding below function to your file you could run `mkcd myNewDirectory` to make myNewDirectory
+
+  ```bash
+  function mkcd() {
+  mkdir $1
+  cd $1
+  }
+  ```
+
+Once you modify any of these files you have to either reopen a new terminal or source that file for eg. `source ~/.bashrc`
 
 In case you forget your custom commands you can list all the aliases active in your terminal using command
 

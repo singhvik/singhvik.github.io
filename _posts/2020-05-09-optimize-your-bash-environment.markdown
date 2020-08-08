@@ -37,11 +37,35 @@ for eg. add any or all of the following commands to end of your `~/.bashrc` file
   ```
 
 Once you modify any of these files you have to either reopen a new terminal or source that file for eg. `source ~/.bashrc`
-
+### View already defined aliases
 In case you forget your custom commands you can list all the aliases active in your terminal using command
 
 ```bash
 $ alias
+```
+Above command will not list any functions you defined.
+
+To see a specific alias u can specify its name as the argument
+
+```bash
+$ alias dev
+```
+### View already defined functions
+You can see all the functions, without thier definition, using declare command
+
+```bash
+declare -F
+```
+If you want to see definition of functions as well, use 
+
+```bash
+declare -f
+```
+
+You can also supply the name of specific functions
+
+```bash
+declare -f mkcd
 ```
 
 ## Quickly change VIM theme

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Optimize your bash enviornment"
+title: "Optimize Your Bash Enviornment"
 date: 2020-05-09 23:16:26 +1200
 categories: [technical, bash]
 tags: [bash, shell]
@@ -37,12 +37,15 @@ for eg. add any or all of the following commands to end of your `~/.bashrc` file
   ```
 
 Once you modify any of these files you have to either reopen a new terminal or source that file for eg. `source ~/.bashrc`
+
 ### View already defined aliases
+
 In case you forget your custom commands you can list all the aliases active in your terminal using command
 
 ```bash
 $ alias
 ```
+
 Above command will not list any functions you defined.
 
 To see a specific alias u can specify its name as the argument
@@ -50,13 +53,16 @@ To see a specific alias u can specify its name as the argument
 ```bash
 $ alias dev
 ```
+
 ### View already defined functions
+
 You can see all the functions, without thier definition, using declare command
 
 ```bash
 declare -F
 ```
-If you want to see definition of functions as well, use 
+
+If you want to see definition of functions as well, use
 
 ```bash
 declare -f

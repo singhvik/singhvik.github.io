@@ -56,7 +56,7 @@ nginx-full     latest              1d3130aefb32        2 days ago          133MB
 
 ```
 
-Now you can see by using alpine images you save more than a 110 MB!
+Now you can see by using alpine images you saved more than 110 MB!
 
 All official images of different products offer many variants of their docker images like alpine, slim etc. You can check product's docker hub page to find their different variants.
 Here is the link to [nginx's dockerhub page](https://hub.docker.com/_/nginx).
@@ -70,9 +70,9 @@ But if you want to use caching, which results in faster subsequent builds, then 
 
 ### How caching in docker build works
 
-A Docker image consists of read-only layers each of which represents a Dockerfile instruction/step.
+A Docker image consists of read-only layers each of which represents a dockerfile instruction/step.
 When a docker build is run if the step or instruction is unchanged then a cache from a previos build is used and the step is not actually exectued.
-As soon a step is changed, cache of all the subsequent steps are also invalidated.
+As soon as a step is changed, cache of all the subsequent steps are also invalidated.
 
 This is why you should always:
 
@@ -143,4 +143,4 @@ Successfully built 911482c87de4
 
 In this dockerfile only `step 4` is executed again when there is a change in my-static-html-directory
 
-So whenever you write a dockerfile think about what steps could change frequently and move them towards the bottom if possible. This is can have a lot of impact on build time of your image.
+So whenever you write a dockerfile think about what steps could change frequently and move them towards the bottom if possible. This can have a lot of impact on build time of your image.

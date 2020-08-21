@@ -144,3 +144,25 @@ Successfully built 911482c87de4
 In this dockerfile only `step 4` is executed again when there is a change in my-static-html-directory
 
 So whenever you write a dockerfile think about what steps could change frequently and move them towards the bottom if possible. This can have a lot of impact on build time of your image.
+
+## #3 Always specify a tag for your base image
+
+If tag for a docker image is not specified then docker uses the latest tag.
+
+```
+FROM nginx
+COPY my-static-html-directory /usr/share/nginx/html
+```
+
+In the above example docker will get the latest version of nginx from docker hub. If current version of nginx today is `1.19.2`. A month later it could be `2.0` with some breaking change and your dockerfile will not work.
+
+It's always a good idea to tie down your dockerfile to a particular version of base image. This practice results in reproducible and consistant builds.
+
+Also, it goes without saying that if you use the `latest` tag then you would have the same problems.
+
+Always supply a proper tag for eg.
+
+```
+FROM nginx:1.19.2
+COPY my-static-html-directory /usr/share/nginx/html
+```

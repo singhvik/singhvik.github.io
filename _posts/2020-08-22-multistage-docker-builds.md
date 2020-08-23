@@ -174,7 +174,7 @@ app-builder                    1.27GB
 
 > app-builder image was used as step one in builder pattern is quite similar to an unoptimized image created in `Method one`
 
-So we see, multi-stage is great and easy way to optimize your final images.
+So we see, multi-stage build is great and easy way to optimize your final images.
 
 For debugging or testing you can also stop build at any stage. For eg. to build just the first stage you could do
 

@@ -7,7 +7,7 @@ tags: [bash, shell]
 ---
 
 If you are a software engineer or an IT student, chances are you work on terminal shell like bash.
-You can perosonalize bash to make yourself efficient and type less to help the lazy guy in you to do his job.
+You can personalize bash to make yourself efficient and type less to help the lazy guy in you to do his job.
 
 ## Type less with aliases
 
@@ -56,7 +56,7 @@ $ alias dev
 
 ### View already defined functions
 
-You can see all the functions, without thier definition, using declare command
+You can see all the functions, without their definition, using declare command
 
 ```bash
 declare -F

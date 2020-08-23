@@ -71,14 +71,14 @@ But if you want to use caching, which results in faster subsequent builds, then 
 ### How caching in docker build works
 
 A Docker image consists of read-only layers each of which represents a dockerfile instruction/step.
-When a docker build is run if the step or instruction is unchanged then a cache from a previos build is used and the step is not actually exectued.
+When a docker build is run if the step or instruction is unchanged then a cache from a previous build is used and the step is not actually executed.
 As soon as a step is changed, cache of all the subsequent steps are also invalidated.
 
 This is why you should always:
 
 **_Order your steps from least to most frequently changing steps to optimize caching._**
 
-Lets see an example. Say you want to install ssh to our nginx-alipine image.
+Lets see an example. Say you want to install ssh to our nginx-alpine image.
 
 ```
 
@@ -156,7 +156,7 @@ COPY my-static-html-directory /usr/share/nginx/html
 
 In the above example docker will get the latest version of nginx from docker hub. If current version of nginx today is `1.19.2`. A month later it could be `2.0` with some breaking change and your dockerfile will not work.
 
-It's always a good idea to tie down your dockerfile to a particular version of base image. This practice results in reproducible and consistant builds.
+It's always a good idea to tie down your dockerfile to a particular version of base image. This practice results in reproducible and consistent builds.
 
 Also, it goes without saying that if you use the `latest` tag then you would have the same problems.
 

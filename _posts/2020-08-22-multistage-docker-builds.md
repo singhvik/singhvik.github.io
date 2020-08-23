@@ -6,7 +6,7 @@ categories: [technical, docker]
 tags: [docker]
 ---
 
-## What is a Multi-stage docker builds
+## What is a Multi-stage docker build
 
 Multi-stage build is a way of dividing dockerfile into stages or sections. Only the artifacts and steps from the final stage end up in the resulting docker image, thus optimizing the image.
 

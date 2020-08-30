@@ -19,9 +19,9 @@ This is not an exhaustive list, its missing things like `Jigsaw Project`. This b
 
 ### Jshell a.k.a REPL
 
-With this new handy tool you can test java code straight from command line without creating and compiling classes.
+With this new handy tool, you can test java code straight from command line without creating and compiling classes.
 
-You can start jshell by simply typing `jshell` in the command line.
+You can start jshell by typing `jshell` in the command line.
 
 ```shell
 $ jshell
@@ -29,16 +29,16 @@ $ jshell
 |  For an introduction type: /help intro
 ```
 
-simply print something you can write a println call without need of any classes
+To print something, you can write a println call without need of any classes.
 
 ```java
 System.out.println("Vikram testing Java 9")
 Vikram testing Java 9
 ```
 
-Notice we did not need to put a semicolon at the end.
+Notice there is not need to put a semicolon at the end.
 
-jshell remembers the variables you create so you can create variables and use them later.
+jshell remembers the variables you create, you can create as many variables you want and use them later.
 
 ```java
 jshell> String str1="Be "
@@ -63,7 +63,7 @@ jshell> sum(5,10)
 $9 ==> 15
 ```
 
-There is no limit you can define classes, enums etc.
+There is no limit to what you can do in `jshell`, you can define classes, enums etc.
 
 You can have a look all the variables defined in your `jshell` using `/var` command.
 
@@ -74,20 +74,20 @@ jshell> /var
 |    String $6 = "Be Happy"
 ```
 
-variables starting with `$` sign are called scratch variables and are created by jshell to hold temporary values which may be result of commands you execute etc.
+variables starting with `$` sign are called scratch variables. Theses are created by jshell to hold temporary values, which may be result of commands you execute etc.
 
-all the methods can be seen using `/methods`
+All the methods defined can be seen using `/methods`
 
 ```java
 jshell> /methods
 |    int sum(int,int)
 ```
 
-to list everything you have done till now use `/list`
+To list everything you have done till now use `/list`
 
 ```java
 jshell> /list
-   1 :  System.out.println("Vikram testing Java 9")
+   1 : System.out.println("Vikram testing Java 9")
    2 : String str1="Be ";
    3 : String str2 ="Happy";
    4 : str1+str2
@@ -133,8 +133,6 @@ jshell> /exit
 
 Before `Java 9` to create an unModifiable collection. Programmers first had to create a collection and then use Collection.unModifiableXXX() eg.
 
-Java 9 adds `.of()` to List, Set, and Map interface.
-
 ```java
 // Java 8 or earlier
 Set<Integer> set = new HashSet<>();
@@ -145,7 +143,9 @@ set.add(3);
 Set<Integer> unModifiableSet = Collections.unmodifiableSet(set);
 ```
 
-This is quite verbose. Starting `Java 9`
+This is quite verbose.
+
+`Java 9` adds `.of()` to List, Set, and Map interface.
 
 ```java
 // Java 9 and higher
@@ -160,7 +160,7 @@ Map<String,String> emptyMap = Map.of(); // empty Map
 Map<String,String> map = Map.of("Key1","Value 1", "Key 2", "Value 2");
 ```
 
-Maximum 10 key-value pairs can be supplied in `Map.of` method
+Maximum 10 key-value pairs can be supplied in `Map.of` method.
 
 For N number of key values you could use `ofEntries` method.
 
@@ -216,7 +216,7 @@ public interface TestInterface {
 
 ### Try With Resources Enhancement
 
-Try with resources wad introduced in `java 7` it is a fantastic way of managing `AutoClosable` resources.
+Try with resources was introduced in `java 7`. It is a fantastic way of managing `AutoClosable` resources.
 
 Before `java 9` resource had to be created inside the `try`
 
@@ -228,6 +228,8 @@ Before `java 9` resource had to be created inside the `try`
  }
 ```
 
+In Java 9 you can create resources outside `try` statement but remember that resources should be either `final` or effectively `final`.
+
 **Java 9 Example**
 
 ```java
@@ -237,4 +239,4 @@ final BufferedReader bufferReader2 = new BufferedReader(new FileReader("vikram.m
  }
 ```
 
-In Java 9 you can create resources outside `try` statement but remember that resources should be either `final` or effectively `final`.
+You can see ability to create resources outside `try` statement greatly improves the readability. This is specially true in case multiple resources are needed within same try with resource.

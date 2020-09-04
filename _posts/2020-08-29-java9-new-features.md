@@ -15,7 +15,7 @@ Some of the main features introduced in Java 9 are following:
 - [Private methods in interfaces... Wait What ?](#private-methods-in-interfaces-wait-what-)
 - [Try With Resources Enhancement](#try-with-resources-enhancement)
 
-This is not an exhaustive list, its missing things like `Jigsaw Project`. This blog post contains some of the more commonly used new features.
+> This is not an exhaustive list, its missing things like `Jigsaw Project`. This blog post contains some of the more commonly used new features.
 
 ### Jshell a.k.a REPL
 

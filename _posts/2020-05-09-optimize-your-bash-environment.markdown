@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Optimize Your Bash Enviornment"
+title: "Optimize Your Bash Environment"
 date: 2020-05-09 23:16:26 +1200
 categories: [technical, bash]
 tags: [bash, shell]

@@ -10,12 +10,12 @@ tags: [java, java-upgrade]
 
 # New Java 11 features <!-- omit in toc -->
 
-Some of the main features introduced in Java 10 are following:
+Some of the main features introduced in Java 11 are following:
 
 - [New Licensing Model](#new-licensing-model)
 - [JEP 330: Run Java with a Single Command and SheBang](#jep-330-run-java-with-a-single-command-and-shebang)
   - [Javac not Needed Anymore](#javac-not-needed-anymore)
-  - [use the SheBang in scripts](#use-the-shebang-in-scripts)
+  - [Use the SheBang in scripts](#use-the-shebang-in-scripts)
 - [JEP 323: Local Variable Syntax for Lambda](#jep-323-local-variable-syntax-for-lambda)
 - [JEP 320 Remove the Java EE and CORBA Modules](#jep-320-remove-the-java-ee-and-corba-modules)
 - [JEP 328: Flight Recorder](#jep-328-flight-recorder)
@@ -39,7 +39,7 @@ This is true for new updates to `Java 8` as well. You can continue using `Java 8
 
 This doesn't mean you can't get Java for free now. Lots of companies, including `Oracle`, contribute to open source project called `OpenJDK`. `OpenJDK` is free alternative to `Oracle` JDK.
 
-> You can get `OpenJDK` from [here](https://adoptopenjdk.net)
+> You can get OpenJDK from [here](https://adoptopenjdk.net)
 
 ### JEP 330: Run Java with a Single Command and SheBang
 
@@ -55,7 +55,7 @@ Before `Java 11` it was a 2 step process.
 Starting `Java 11` you can compile and run a program with one command.
 Eg. `java MyOtherClass.java`, no need to use `javac` anymore. This one command will both compile and run your class.
 
-#### use the SheBang in scripts
+#### Use the SheBang in scripts
 
 Single file java program can be run using `Shebang`.
 
@@ -89,7 +89,7 @@ Consider the following Lambda expression
 Function<String,String> convertCase = (input) -> input.toUpperCase();
 ```
 
-This lambda takes a String and converts it too upper case. Note that `Function` is predefined functional interface in `java.util` package
+This lambda takes a String and converts it too upper case. Note that `Function` is predefined functional interface in `java.util.function` package
 
 ```java
 String convertedString = convertCase.apply("caps are considered shouting in chat");
@@ -108,7 +108,7 @@ This isn't any better from the previous declaration of convertCase. But using `v
 Function<String,String> convertCase = (@NotNull var input) -> input.toUpperCase();
 ```
 
-> NotNull is not part of standard java, used here just as an example. Although there are many common implementation of NotNull in various libraries.
+> NotNull is not part of standard java, although there are many common implementation of NotNull in various libraries.
 
 ### JEP 320 Remove the Java EE and CORBA Modules
 
@@ -155,12 +155,13 @@ It has existed for many years and was previously a commercial feature of the Ora
   ```
 
 - `Stream<String> lines()`
-- Returns a stream of lines extracted from the string it is called on.
+
+  Returns a stream of lines extracted from the string it is called on.
   Lines in strings are separated by line terminators ie. `\n`, `\r`, `\r\n`.
 
   ```java
   "my \n name \n is \n vikram".lines().forEach(System.out::println)
-  // prints folowing:
+  // prints following:
   // my
   // name
   // is

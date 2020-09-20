@@ -146,7 +146,7 @@ It has existed for many years and was previously a commercial feature of the Ora
 
 - `boolean isBlank()`
 
-  Returns true if string is empty or only contains [whitespace](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Character.html).
+  Returns true if string is empty or only contains [whitespace](<https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Character.html#isWhitespace(char)>).
 
   ```java
   boolean blank = "".isBlank();// true

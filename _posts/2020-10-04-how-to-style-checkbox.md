@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "How to style a checkbox using css"
-date: 2020-09-21 00:00:26 +1200
+date: 2020-10-04 00:00:26 +1200
 categories: [technical, html]
 tags: [html, css]
 ---

@@ -33,11 +33,11 @@ Some of the main features introduced in Java 12 are following:
 
 `Java 12` adds an experimental Garbage Collector(GC) called Shenandoah. This GC does evacuation in parallel to the running java threads. Pause times in this GC are independent of heap size, i.e pause times will be consistent whether you have heap size of 100MB or 100 GB.
 
-This GC can come in handy for application requiring high responsiveness and availability since it will have a very small pause time.
+This GC can come in handy for application requiring high responsiveness and availability, since it will have a very small pause time.
 
 ## JEP 230: Microbenchmark Suite
 
-This feature add a suite of benchmarks to the JDK source code and also provide developers ability to add new benchmarks. This comes in handy when some one wants to check the performance of JDK after a change they made.
+This feature adds a suite of benchmarks to the JDK source code and also provide developers ability to add new benchmarks. This comes in handy when some one wants to check the performance of JDK after a change they made.
 
 These bench marks are based on Java Microbenchmark Harness (JMH).
 
@@ -52,7 +52,7 @@ Traditionally switch cases looks like this :
 ```java
 switch(day){
   case "M" : System.out.println("Start of week");
-            break;
+             break;
   case "T" :
   case "W" :
   case "TH": System.out.println("Mid week");
@@ -78,10 +78,10 @@ switch(day){
 **Things to note**
 
 - Cascading cases from our traditional switch cases have been combined using comma,
-- Break statement is not required as cases don't fall through like in traditional switch case
-- each case has the syntax `case Label -> `
+- Break statement is not required as cases don't fall through like in traditional switch case.
+- Each case has the syntax `case Label -> `
 
-Another change in the new syntax of switch is that switch can be used as an expression and return a value.
+Another change in the new syntax of switch is that switch can be used as an expression and returns a value.
 
 ```java
 String str = switch(day){
@@ -92,7 +92,7 @@ String str = switch(day){
 };
 ```
 
-In the above example each case return a value, and based on input variable `day` a value is returned and assigned to str.
+In the above example each case return a value, and based on input variable `day` a value is returned and assigned to `str`.
 Notice the semicolon after the closing brace of switch completing the assignment to variable `str`.
 
 > Note: A single line Lambda expression returns the result of expression by default.
@@ -145,7 +145,7 @@ Before Java 12, JDK had two different ports or implementations for the 64-bit AR
 - `src/hotspot/cpu/arm` (contributed by Oracle)
 - `src/hotspot/cpu/aarch64`
 
-Java 12 removed the Oracle version `src/hotspot/cpu/arm port` and there by making the default (and only) build for the 64-bit ARM architecture.
+Java 12 removed the Oracle version `src/hotspot/cpu/arm` and there by making `aarch64` port the default (and only) build for the 64-bit ARM architecture.
 
 ## JEP 341: Default CDS Archives
 

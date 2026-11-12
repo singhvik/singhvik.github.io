@@ -46,8 +46,15 @@ article.post{max-width:680px;margin:0 auto;padding:0 24px}
 .post-page h1{font-size:clamp(32px,5vw,46px);margin:10px 0 12px}
 .post-content{font-size:19px;line-height:1.75}
 .post-content h2{font-size:28px;margin:40px 0 16px}
-.post-content pre,.post-content code{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:15px}
-.post-content pre{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px;overflow-x:auto}
+/* The layout already shows the title; hide a repeat heading at the very start of a post's text. */
+.post-content>h1:first-child{display:none}
+/* Code: inline */
+.post-content code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.88em;background:var(--soft);color:var(--text);border:0;padding:2px 6px;border-radius:5px}
+/* Code: blocks. Kept on a light surface in both modes so Rouge's syntax colors stay readable. */
+.post-content div.highlighter-rouge,.post-content figure.highlight{margin:24px 0;background:transparent}
+.post-content .highlighter-rouge .highlight,.post-content .highlight{background:transparent;color:#2B2A28}
+.post-content pre,.post-content pre.highlight{background:#F4EFE6;color:#2B2A28;border:1px solid #E4DCCF;border-radius:10px;padding:16px 18px;margin:0;overflow-x:auto;font-size:15px;line-height:1.6}
+.post-content pre code{background:none;border:0;padding:0;border-radius:0;font-size:inherit;color:inherit}
 .next-read{margin-top:48px}.next-read h2{font-size:24px}
 
 blockquote{border:0;background:var(--tint);color:var(--text);border-radius:12px;padding:20px 24px;margin:28px 0;font-family:Fraunces,Georgia,serif;font-size:21px;font-style:normal}

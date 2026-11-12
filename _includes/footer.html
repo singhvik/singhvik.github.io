@@ -1,0 +1,9 @@
+<footer class="site-footer">
+  <div class="wrapper site-footer-inner">
+    <span>{{ site.title | escape }}, software engineer</span>
+    <span class="footer-links">
+      {% if site.github_username %}<a href="https://github.com/{{ site.github_username }}">GitHub</a>{% endif %}
+      <a href="{{ '/feed.xml' | relative_url }}">RSS</a>
+    </span>
+  </div>
+</footer>

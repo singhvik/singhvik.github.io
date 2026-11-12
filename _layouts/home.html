@@ -1,0 +1,19 @@
+---
+layout: default
+---
+<section class="hero">
+  <div class="hero-text">
+    <h1>{{ site.hero_title }}</h1>
+    <p>{{ site.hero_subtitle }}</p>
+  </div>
+  <svg class="hero-art" aria-hidden="true" width="280" height="220" viewBox="0 0 280 220"><rect x="10" y="10" width="260" height="200" rx="20" fill="var(--soft)"/><rect x="40" y="40" width="170" height="120" rx="10" fill="var(--card)" stroke="var(--line)" stroke-width="2"/><circle cx="58" cy="58" r="5" fill="#E0A38C"/><circle cx="74" cy="58" r="5" fill="#E6C98A"/><circle cx="90" cy="58" r="5" fill="#8DBFB8"/><path d="M58 88h70M58 108h100M58 128h56" stroke="var(--accent)" stroke-width="6" stroke-linecap="round"/><path d="M170 128h24" stroke="var(--line)" stroke-width="6" stroke-linecap="round"/><path d="M210 100l24 -22M210 100l30 30" stroke="var(--accent)" stroke-width="3" stroke-linecap="round"/><circle cx="210" cy="100" r="10" fill="var(--accent)"/><circle cx="236" cy="76" r="8" fill="#8DBFB8"/><circle cx="242" cy="134" r="8" fill="#E0A38C"/></svg>
+</section>
+
+<section class="latest" id="latest">
+  <h2>Latest posts</h2>
+  <ul class="post-rows">
+    {% for post in site.posts limit:10 %}
+    <li><a href="{{ post.url | relative_url }}"><span class="row-title">{{ post.title | escape }}</span><span class="meta">{{ post.tags.first | default: post.categories.last }}, {{ post.date | date: "%-d %b %Y" }}</span></a></li>
+    {% endfor %}
+  </ul>
+</section>

@@ -1,0 +1,18 @@
+---
+layout: default
+---
+<article class="post-page">
+  <header>
+    <span class="tag">{{ page.tags.first | default: page.categories.last }}</span>
+    <h1>{{ page.title | escape }}</h1>
+    <p class="meta">{{ page.date | date: "%-d %B %Y" }}, {{ content | number_of_words | divided_by: 200 | plus: 1 }} min read</p>
+  </header>
+  <div class="post-content">{{ content }}</div>
+  {% assign more = page.next | default: page.previous %}
+  {% if more %}
+  <aside class="next-read">
+    <h2>Next read</h2>
+    <a class="card" href="{{ more.url | relative_url }}"><h3>{{ more.title | escape }}</h3></a>
+  </aside>
+  {% endif %}
+</article>
